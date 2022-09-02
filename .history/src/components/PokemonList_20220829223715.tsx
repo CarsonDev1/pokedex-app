@@ -1,0 +1,31 @@
+import React from "react";
+import "./pokemon.css";
+
+interface Props {
+	abilities:
+		| {
+				name: string;
+				ability: string;
+		  }[]
+		| undefined;
+	name: string;
+	id: number;
+	image: string;
+}
+
+const PokemonList: React.FC<Props> = (props) => {
+	const { name, id, image, abilities } = props;
+	return (
+		<div className="">
+			<section className="pokemon-list-container">
+				<p className="pokemon-name">{name}</p>
+				<img src={image} alt="pokemon" />
+				<div className="detail-skill">
+					<p className="detail-ability"> Abilities: </p>
+				</div>
+			</section>
+		</div>
+	);
+};
+
+export default PokemonList;

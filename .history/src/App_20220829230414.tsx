@@ -27,7 +27,6 @@ const App: React.FC = () => {
 			const res = await axios.get(
 				"https://pokeapi.co/api/v2/pokemon?limit=20&offset=20"
 			);
-
 			setNextUrl(res.data.next);
 			res.data.results.forEach(async (pokemon: Pokemons) => {
 				const poke = await axios.get(
